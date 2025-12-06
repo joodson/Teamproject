@@ -1,0 +1,8 @@
+Arial - Black.ttf
+Arial - Bold.ttf
+Arial - Regular.ttf
+Candara - Bold.ttf
+Chaparral Pro - Bold.otf
+Kozuka Gothic Pro - Bold.otf
+Megadeth.ttf
+Thailandesa.ttf
