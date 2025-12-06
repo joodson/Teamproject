@@ -100,10 +100,10 @@ TextureImporter:
       name: 2 Game Menu_0
       rect:
         serializedVersion: 2
-        x: 329
-        y: 485
-        width: 303
-        height: 85
+        x: 424
+        y: 514
+        width: 107
+        height: 33
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
