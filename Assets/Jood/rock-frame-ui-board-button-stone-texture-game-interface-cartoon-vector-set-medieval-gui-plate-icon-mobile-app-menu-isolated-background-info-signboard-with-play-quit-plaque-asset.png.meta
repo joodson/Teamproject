@@ -1,0 +1,326 @@
+fileFormatVersion: 2
+guid: 18c3a37a41200d246a9736ebd7b0ba81
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: rock-frame-ui-board-button-stone-texture-game-interface-cartoon-vector-set-medieval-gui-plate-icon-mobile-app-menu-isolated-background-info-signboard-with-play-quit-plaque-asset_0
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 439
+        width: 531
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b3a86f0a63a2b44abde88fb6c395b1e
+      internalID: -2138009433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rock-frame-ui-board-button-stone-texture-game-interface-cartoon-vector-set-medieval-gui-plate-icon-mobile-app-menu-isolated-background-info-signboard-with-play-quit-plaque-asset_1
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 244
+        width: 561
+        height: 350
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d73dcdb6d4312bd4c91f445ccd9b6108
+      internalID: -1477394460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rock-frame-ui-board-button-stone-texture-game-interface-cartoon-vector-set-medieval-gui-plate-icon-mobile-app-menu-isolated-background-info-signboard-with-play-quit-plaque-asset_2
+      rect:
+        serializedVersion: 2
+        x: 1321
+        y: 234
+        width: 593
+        height: 369
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d15c40c81311b084eb6d0cb750363362
+      internalID: -1939697765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rock-frame-ui-board-button-stone-texture-game-interface-cartoon-vector-set-medieval-gui-plate-icon-mobile-app-menu-isolated-background-info-signboard-with-play-quit-plaque-asset_3
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 244
+        width: 531
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06686fae6035a454393ec3b02cf7e327
+      internalID: -740522149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rock-frame-ui-board-button-stone-texture-game-interface-cartoon-vector-set-medieval-gui-plate-icon-mobile-app-menu-isolated-background-info-signboard-with-play-quit-plaque-asset_4
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 64
+        width: 326
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0dcb3ef3cb609944ac1cea1b195ce74
+      internalID: 717166723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rock-frame-ui-board-button-stone-texture-game-interface-cartoon-vector-set-medieval-gui-plate-icon-mobile-app-menu-isolated-background-info-signboard-with-play-quit-plaque-asset_5
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 64
+        width: 326
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82baab84c39f40d45b3ec38117ebe9f9
+      internalID: 1366809388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rock-frame-ui-board-button-stone-texture-game-interface-cartoon-vector-set-medieval-gui-plate-icon-mobile-app-menu-isolated-background-info-signboard-with-play-quit-plaque-asset_6
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 64
+        width: 326
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc06fa7cdd824e0499378a6c73b2b8bc
+      internalID: 1711953124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rock-frame-ui-board-button-stone-texture-game-interface-cartoon-vector-set-medieval-gui-plate-icon-mobile-app-menu-isolated-background-info-signboard-with-play-quit-plaque-asset_7
+      rect:
+        serializedVersion: 2
+        x: 1146
+        y: 64
+        width: 371
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c51e7dc653240a4488799989ede605ff
+      internalID: 609931319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rock-frame-ui-board-button-stone-texture-game-interface-cartoon-vector-set-medieval-gui-plate-icon-mobile-app-menu-isolated-background-info-signboard-with-play-quit-plaque-asset_8
+      rect:
+        serializedVersion: 2
+        x: 1546
+        y: 64
+        width: 371
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d268ffa075d1a04b945ad2148862077
+      internalID: 804390125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 36684223928565a43b1c8b5fa20b4adf
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      rock-frame-ui-board-button-stone-texture-game-interface-cartoon-vector-set-medieval-gui-plate-icon-mobile-app-menu-isolated-background-info-signboard-with-play-quit-plaque-asset_0: -2138009433
+      rock-frame-ui-board-button-stone-texture-game-interface-cartoon-vector-set-medieval-gui-plate-icon-mobile-app-menu-isolated-background-info-signboard-with-play-quit-plaque-asset_1: -1477394460
+      rock-frame-ui-board-button-stone-texture-game-interface-cartoon-vector-set-medieval-gui-plate-icon-mobile-app-menu-isolated-background-info-signboard-with-play-quit-plaque-asset_2: -1939697765
+      rock-frame-ui-board-button-stone-texture-game-interface-cartoon-vector-set-medieval-gui-plate-icon-mobile-app-menu-isolated-background-info-signboard-with-play-quit-plaque-asset_3: -740522149
+      rock-frame-ui-board-button-stone-texture-game-interface-cartoon-vector-set-medieval-gui-plate-icon-mobile-app-menu-isolated-background-info-signboard-with-play-quit-plaque-asset_4: 717166723
+      rock-frame-ui-board-button-stone-texture-game-interface-cartoon-vector-set-medieval-gui-plate-icon-mobile-app-menu-isolated-background-info-signboard-with-play-quit-plaque-asset_5: 1366809388
+      rock-frame-ui-board-button-stone-texture-game-interface-cartoon-vector-set-medieval-gui-plate-icon-mobile-app-menu-isolated-background-info-signboard-with-play-quit-plaque-asset_6: 1711953124
+      rock-frame-ui-board-button-stone-texture-game-interface-cartoon-vector-set-medieval-gui-plate-icon-mobile-app-menu-isolated-background-info-signboard-with-play-quit-plaque-asset_7: 609931319
+      rock-frame-ui-board-button-stone-texture-game-interface-cartoon-vector-set-medieval-gui-plate-icon-mobile-app-menu-isolated-background-info-signboard-with-play-quit-plaque-asset_8: 804390125
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
