@@ -796,6 +796,7 @@ GameObject:
   m_Component:
   - component: {fileID: 526851893}
   - component: {fileID: 526851894}
+  - component: {fileID: 526851895}
   m_Layer: 5
   m_Name: music Slider
   m_TagString: Untagged
@@ -877,6 +878,20 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &526851895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526851892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9d9ba30476956e40b4c5e25f7670a77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MusicControl
+  mixer: {fileID: 24100000, guid: 8e9c90ebacec7344d8d7cdb7720b3b68, type: 2}
+  musicSlider: {fileID: 526851894}
 --- !u!1 &611095302
 GameObject:
   m_ObjectHideFlags: 0
@@ -2128,6 +2143,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1949333184}
   - component: {fileID: 1949333185}
+  - component: {fileID: 1949333186}
   m_Layer: 5
   m_Name: SFX Slider
   m_TagString: Untagged
@@ -2209,6 +2225,20 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1949333186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1949333183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b84c8b6aa69fed4c90b0cc9bcd8ba4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SFXControl
+  mixer: {fileID: 24100000, guid: 8e9c90ebacec7344d8d7cdb7720b3b68, type: 2}
+  sfxSlider: {fileID: 1949333185}
 --- !u!1 &2073793170
 GameObject:
   m_ObjectHideFlags: 0
