@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 77c3bc6352b9bf346a6a9c188ec41329
+guid: 35a722d13eee6d647911f7195e83887b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -95,12 +95,35 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: "ChatGPT Image 8 \u062F\u064A\u0633\u0645\u0628\u0631 2025\u060C 07_49_18
+        \u0645 1_2"
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 241
+        width: 1128
+        height: 573
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8c5fe5d4b226d64db0683374c4c6e4e
+      internalID: 956739614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 150f86aa2d517874a917f66cb1ae4a43
     internalID: 0
     vertices: []
     indices: 
@@ -108,8 +131,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
-    nameFileIdTable: {}
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      "ChatGPT Image 8 \u062F\u064A\u0633\u0645\u0628\u0631 2025\u060C 07_49_18 \u0645 1_0": -1991307211
+      "ChatGPT Image 8 \u062F\u064A\u0633\u0645\u0628\u0631 2025\u060C 07_49_18 \u0645 1_1": -302361640
+      "ChatGPT Image 8 \u062F\u064A\u0633\u0645\u0628\u0631 2025\u060C 07_49_18 \u0645 1_2": 956739614
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
