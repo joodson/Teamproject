@@ -547,6 +547,7 @@ GameObject:
   - component: {fileID: 321380464}
   - component: {fileID: 321380463}
   - component: {fileID: 321380462}
+  - component: {fileID: 321380465}
   m_Layer: 5
   m_Name: 'Instruction Button '
   m_TagString: Untagged
@@ -617,7 +618,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 321380463}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 321380465}
+        m_TargetAssemblyTypeName: NavigateBetweenScene, Assembly-CSharp
+        m_MethodName: LoadSceneByName
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Instructions
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &321380463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -638,7 +651,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -589618691, guid: 306ee2857107c0648a9a3a7cb41ef96f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 09f0c9b72cc3867448f28333f1653925, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -656,6 +669,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 321380460}
   m_CullTransparentMesh: 1
+--- !u!114 &321380465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321380460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae0764fc939007c42b14f8511f1c246a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NavigateBetweenScene
 --- !u!1 &381531933
 GameObject:
   m_ObjectHideFlags: 0
@@ -1200,7 +1225,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -589618691, guid: 306ee2857107c0648a9a3a7cb41ef96f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 09f0c9b72cc3867448f28333f1653925, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1333,7 +1358,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -589618691, guid: 306ee2857107c0648a9a3a7cb41ef96f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 09f0c9b72cc3867448f28333f1653925, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
