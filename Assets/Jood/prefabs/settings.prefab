@@ -319,8 +319,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Music
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: fd30c9c365acbac408128cbc4fc74fc8, type: 2}
-  m_sharedMaterial: {fileID: -7447475830792262817, guid: fd30c9c365acbac408128cbc4fc74fc8, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 09619eb297e812c41b89b0933e2a50f5, type: 2}
+  m_sharedMaterial: {fileID: -7447475830792262817, guid: 09619eb297e812c41b89b0933e2a50f5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -456,8 +456,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Mouse sensitivity
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: fd30c9c365acbac408128cbc4fc74fc8, type: 2}
-  m_sharedMaterial: {fileID: -7447475830792262817, guid: fd30c9c365acbac408128cbc4fc74fc8, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 09619eb297e812c41b89b0933e2a50f5, type: 2}
+  m_sharedMaterial: {fileID: -7447475830792262817, guid: 09619eb297e812c41b89b0933e2a50f5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -826,8 +826,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Sound effects
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: fd30c9c365acbac408128cbc4fc74fc8, type: 2}
-  m_sharedMaterial: {fileID: -7447475830792262817, guid: fd30c9c365acbac408128cbc4fc74fc8, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 09619eb297e812c41b89b0933e2a50f5, type: 2}
+  m_sharedMaterial: {fileID: -7447475830792262817, guid: 09619eb297e812c41b89b0933e2a50f5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1504,8 +1504,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: How to play
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: fd30c9c365acbac408128cbc4fc74fc8, type: 2}
-  m_sharedMaterial: {fileID: -7447475830792262817, guid: fd30c9c365acbac408128cbc4fc74fc8, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 09619eb297e812c41b89b0933e2a50f5, type: 2}
+  m_sharedMaterial: {fileID: -7447475830792262817, guid: 09619eb297e812c41b89b0933e2a50f5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2257,7 +2257,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.8784314}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
