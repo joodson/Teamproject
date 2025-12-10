@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Jood/J_scenes/Instructions.unity
     guid: 92f766160214ca84b855c239b76fd4e6
+  - enabled: 1
+    path: Assets/Jood/J_scenes/losing.unity
+    guid: 8f74970589556df4cb0bda61f979c7ea
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
