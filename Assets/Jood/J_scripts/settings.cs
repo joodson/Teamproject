@@ -6,6 +6,10 @@ public class settings : MonoBehaviour
     //this line will be deleted after merging with player script
     public float mouseSensitivity = 2;
 
+    public void Start()
+    {
+        Time.timeScale = 1f;
+    }
     public void FixedUpdate()
     {
         if (Input.GetKeyDown(KeyCode.Escape))

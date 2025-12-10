@@ -536,6 +536,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: menu
       objectReference: {fileID: 0}
+    - target: {fileID: 5497835394417357685, guid: c3062e7630f5cc14c954684bae866fee, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5497835394417357685, guid: c3062e7630f5cc14c954684bae866fee, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4.6193733
+      objectReference: {fileID: 0}
+    - target: {fileID: 5497835394417357685, guid: c3062e7630f5cc14c954684bae866fee, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 4.6193733
+      objectReference: {fileID: 0}
+    - target: {fileID: 5497835394417357685, guid: c3062e7630f5cc14c954684bae866fee, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7898335927851892659, guid: c3062e7630f5cc14c954684bae866fee, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
