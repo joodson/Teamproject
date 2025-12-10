@@ -1,0 +1,510 @@
+fileFormatVersion: 2
+guid: d6e81098f6de2ed40ad43360cc526159
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: vecteezy_game-ui-elements-with-gold-frame-in-medieval-style_23869687_0
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 217
+        width: 311
+        height: 309
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c9ca561c42423346b528254c63380a7
+      internalID: 1830181801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_game-ui-elements-with-gold-frame-in-medieval-style_23869687_1
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 217
+        width: 573
+        height: 309
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93b428f503d21c741a208fdad7373a5e
+      internalID: 2086435789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_game-ui-elements-with-gold-frame-in-medieval-style_23869687_2
+      rect:
+        serializedVersion: 2
+        x: 1112
+        y: 428
+        width: 315
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3e315c31c195b24a8251c474d76b4eb
+      internalID: 1783244948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_game-ui-elements-with-gold-frame-in-medieval-style_23869687_3
+      rect:
+        serializedVersion: 2
+        x: 1479
+        y: 73
+        width: 315
+        height: 453
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed88a3fa3ba012d459294fa5ef8533bd
+      internalID: 824026858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_game-ui-elements-with-gold-frame-in-medieval-style_23869687_4
+      rect:
+        serializedVersion: 2
+        x: 1123
+        y: 304
+        width: 296
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85afbd11473e3f54d8a761a78938cdfc
+      internalID: -315547451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_game-ui-elements-with-gold-frame-in-medieval-style_23869687_5
+      rect:
+        serializedVersion: 2
+        x: 1112
+        y: 254
+        width: 315
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f82d8ea09693a3844918d227445a20b6
+      internalID: -1376769286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_game-ui-elements-with-gold-frame-in-medieval-style_23869687_6
+      rect:
+        serializedVersion: 2
+        x: 1112
+        y: 178
+        width: 315
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46ab631bc84e8d94fbb4ce0b9980f118
+      internalID: 1798902082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_game-ui-elements-with-gold-frame-in-medieval-style_23869687_7
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 78
+        width: 52
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e322ed6c94b029b45bfae3da04fb8aec
+      internalID: -1034884642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_game-ui-elements-with-gold-frame-in-medieval-style_23869687_8
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 77
+        width: 56
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4466a9a860305d84186a4c7eb7f94825
+      internalID: 1292714292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_game-ui-elements-with-gold-frame-in-medieval-style_23869687_9
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 71
+        width: 124
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b8de55c18795e949a498184f0dbf497
+      internalID: -2040168821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_game-ui-elements-with-gold-frame-in-medieval-style_23869687_10
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 120
+        width: 456
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbc25dd7890a4df4dbb5b181c5a34ae4
+      internalID: -2068125255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_game-ui-elements-with-gold-frame-in-medieval-style_23869687_11
+      rect:
+        serializedVersion: 2
+        x: 951
+        y: 59
+        width: 105
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a15bb2c452e887478a47edf6f4b27e2
+      internalID: 2015478086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_game-ui-elements-with-gold-frame-in-medieval-style_23869687_12
+      rect:
+        serializedVersion: 2
+        x: 1112
+        y: 120
+        width: 86
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1eff16ccb85ee8944b6aa432fed9a99b
+      internalID: 2096595261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_game-ui-elements-with-gold-frame-in-medieval-style_23869687_13
+      rect:
+        serializedVersion: 2
+        x: 1228
+        y: 120
+        width: 82
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af797c2c2770e0a4caa945ce18882c68
+      internalID: 2084533245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_game-ui-elements-with-gold-frame-in-medieval-style_23869687_14
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 120
+        width: 83
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 939bc93140b052443989d528f387e50c
+      internalID: 1393991129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_game-ui-elements-with-gold-frame-in-medieval-style_23869687_15
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 76
+        width: 458
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9698d39b0480b748be168bbe27cb304
+      internalID: -1806187292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_game-ui-elements-with-gold-frame-in-medieval-style_23869687_16
+      rect:
+        serializedVersion: 2
+        x: 1116
+        y: 76
+        width: 311
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afe2eea7c7db2a240a08259b9c0b2fe6
+      internalID: 717763095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 511255f750ae0314d9cb5dbba835bc6b
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      vecteezy_game-ui-elements-with-gold-frame-in-medieval-style_23869687_0: 1830181801
+      vecteezy_game-ui-elements-with-gold-frame-in-medieval-style_23869687_1: 2086435789
+      vecteezy_game-ui-elements-with-gold-frame-in-medieval-style_23869687_10: -2068125255
+      vecteezy_game-ui-elements-with-gold-frame-in-medieval-style_23869687_11: 2015478086
+      vecteezy_game-ui-elements-with-gold-frame-in-medieval-style_23869687_12: 2096595261
+      vecteezy_game-ui-elements-with-gold-frame-in-medieval-style_23869687_13: 2084533245
+      vecteezy_game-ui-elements-with-gold-frame-in-medieval-style_23869687_14: 1393991129
+      vecteezy_game-ui-elements-with-gold-frame-in-medieval-style_23869687_15: -1806187292
+      vecteezy_game-ui-elements-with-gold-frame-in-medieval-style_23869687_16: 717763095
+      vecteezy_game-ui-elements-with-gold-frame-in-medieval-style_23869687_2: 1783244948
+      vecteezy_game-ui-elements-with-gold-frame-in-medieval-style_23869687_3: 824026858
+      vecteezy_game-ui-elements-with-gold-frame-in-medieval-style_23869687_4: -315547451
+      vecteezy_game-ui-elements-with-gold-frame-in-medieval-style_23869687_5: -1376769286
+      vecteezy_game-ui-elements-with-gold-frame-in-medieval-style_23869687_6: 1798902082
+      vecteezy_game-ui-elements-with-gold-frame-in-medieval-style_23869687_7: -1034884642
+      vecteezy_game-ui-elements-with-gold-frame-in-medieval-style_23869687_8: 1292714292
+      vecteezy_game-ui-elements-with-gold-frame-in-medieval-style_23869687_9: -2040168821
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
