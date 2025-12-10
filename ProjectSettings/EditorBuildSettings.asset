@@ -9,13 +9,13 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: Assets/Jood/scenes/Jood.unity
+    path: Assets/Jood/J_scenes/Jood.unity
     guid: c0199bd7e7c8ff74c85ac398a5382af6
   - enabled: 1
-    path: Assets/Jood/scenes/settings.unity
+    path: Assets/Jood/J_scenes/settings.unity
     guid: 334601508ced27b45b53cbfd07a1615b
   - enabled: 1
-    path: Assets/Jood/scenes/Instructions.unity
+    path: Assets/Jood/J_scenes/Instructions.unity
     guid: 92f766160214ca84b855c239b76fd4e6
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
