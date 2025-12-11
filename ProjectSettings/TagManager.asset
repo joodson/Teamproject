@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - MazeGeo
   - Zombie
+  - Bullet
   layers:
   - Default
   - TransparentFX

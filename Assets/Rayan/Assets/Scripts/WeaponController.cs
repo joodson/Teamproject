@@ -46,8 +46,9 @@ public class WeaponController : MonoBehaviour
     private void HandleAimCrosshair()
     {
         ThirdPersonCamera cam = playerCamera.GetComponent<ThirdPersonCamera>();
-            
-        crosshairUI.SetAiming(cam.IsAiming());
+
+        if (crosshairUI != null)
+            crosshairUI.SetAiming(cam.IsAiming());
     }
 
     private void HandleShooting()
@@ -95,14 +96,20 @@ public class WeaponController : MonoBehaviour
         if (crosshairUI != null)
             crosshairUI.ShowHitMarker();
 
+        // التأثير البصري للرصاصة
         BulletImpact impactScript = hit.collider.GetComponent<BulletImpact>();
-
         if (impactScript != null)
         {
             impactScript.OnHit(hit.point, hit.normal);
         }
-    }
 
+        // 🩸 ضرر العدو
+        EnemyHealth enemy = hit.collider.GetComponent<EnemyHealth>();
+        if (enemy != null)
+        {
+            enemy.TakeDamage((int)damage);
+        }
+    }
 
     private void HandleReload()
     {

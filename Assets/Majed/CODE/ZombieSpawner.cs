@@ -2,17 +2,22 @@ using UnityEngine;
 
 public class ZombieSpawner : MonoBehaviour
 {
-    public GameObject zombiePrefab;   // نسخة الزومبي
-    public Transform player;          // اللاعب
-    public int maxZombies = 20;       // الحد الأعلى للزومبي
-    public float spawnRate = 2f;      // كل كم ثانية يرسبن واحد جديد
-    public float spawnRadius = 10f;   // المسافة بينك وبين مكان ظهور الزومبي
+    public Transform player;             // اللاعب
+    public int maxZombies = 20;          // الحد الأعلى للزومبي
+    public float spawnRate = 2f;         // كل كم ثانية يرسبن واحد جديد
+    public float spawnRadius = 10f;      // مسافة ظهور الزومبي حول اللاعب
 
     private float nextSpawnTime = 0f;
+    private GameObject zombieTemplate;   // النسخة الأساسية اللي بنستنسخ منها
+
+    void Start()
+    {
+        // نحفظ نسخة من نفس الكائن كـ Template
+        zombieTemplate = gameObject;
+    }
 
     void Update()
     {
-        // لا يرسبن إلا بعد الوقت المحدد
         if (Time.time >= nextSpawnTime)
         {
             TrySpawnZombie();
@@ -22,23 +27,24 @@ public class ZombieSpawner : MonoBehaviour
 
     void TrySpawnZombie()
     {
-        // عد عدد الزومبي الموجودين
+        // نحسب عدد الزومبي المتواجدين
         int currentZombies = GameObject.FindGameObjectsWithTag("Zombie").Length;
 
-        // لو العدد وصل 20 لا يرسبن
         if (currentZombies >= maxZombies)
             return;
 
-        // حدد مكان عشوائي حول اللاعب
+        // تحديد موقع عشوائي حول اللاعب
         Vector3 spawnPos = player.position + Random.insideUnitSphere * spawnRadius;
         spawnPos.y = player.position.y;
 
-        // أنشئ الزومبي
-        GameObject newZombie = Instantiate(zombiePrefab, spawnPos, Quaternion.identity);
+        // استنساخ الزومبي من نفس الكائن اللي المركب عليه السكربت
+        GameObject newZombie = Instantiate(zombieTemplate, spawnPos, zombieTemplate.transform.rotation);
 
-        // اربط اللاعب داخل سكربت الزومبي
+        // نحرص ألا نعبث بالـ spawner نفسه
+        newZombie.GetComponent<ZombieSpawner>().enabled = false;
+
+        // ربط اللاعب داخل سكربت متابعة الزومبي
         ZombieFollow follow = newZombie.GetComponent<ZombieFollow>();
         follow.player = player;
     }
-  
 }
