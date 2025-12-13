@@ -68,122 +68,122 @@ ModelImporter:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: AvatarBodyMale_Color_1K
-    second: {fileID: 2800000, guid: 5de15817282aa92448f7e864a5d8e8fc, type: 3}
+    second: {fileID: 2800000, guid: 8150152ef52a5464fb610f169033b223, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: AvatarBodyMale_Normal1_1K
-    second: {fileID: 2800000, guid: c912229720c84184bafb4d4b7817655b, type: 3}
+    second: {fileID: 2800000, guid: 420c6577cdafe3447b8c54856c5a0f3d, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: AvatarBodyMale_Roughness_1K
-    second: {fileID: 2800000, guid: 794f3fa682311ae428cceb62a5c02950, type: 3}
+    second: {fileID: 2800000, guid: ff8e4c0602e163549a01d3b0c1dec696, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: AvatarEyes_Color_512
-    second: {fileID: 2800000, guid: a69a7aa56007f9c4f8ee84bd3a1ae19f, type: 3}
+    second: {fileID: 2800000, guid: e205e65ccb925cd4ba157d708070a3cb, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: AvatarEyes_Normal_512
-    second: {fileID: 2800000, guid: 26729133b22880944814c12d73d78700, type: 3}
+    second: {fileID: 2800000, guid: b7a9217176ead0840b48b5cb586fcf64, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: AvatarEyes_Roughness_512
-    second: {fileID: 2800000, guid: 525f87ed2590a554cb8866b967141250, type: 3}
+    second: {fileID: 2800000, guid: b2f40ea6ad006e74cb46544d962e8cc3, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: AvatarHeadMale_Color_1K
-    second: {fileID: 2800000, guid: 10478d231f047474bb219f1159281734, type: 3}
+    second: {fileID: 2800000, guid: f87fd420be796d94b9437faa9db0a34f, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: AvatarHeadMale_Normal1_1K
-    second: {fileID: 2800000, guid: 08a276e73e03f9c4c9092ca0cc16d939, type: 3}
+    second: {fileID: 2800000, guid: 3bc9c76f9ee140e45a209745e5bc3404, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: AvatarHeadMale_Roughness_1K
-    second: {fileID: 2800000, guid: c8b86f93c157a0e40a63bb39ece363d3, type: 3}
+    second: {fileID: 2800000, guid: 465100eb3dc547e4fa8355c14029feb1, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: AvatarLeftCornea_Color_512
-    second: {fileID: 2800000, guid: ab96a77caade89a45b09c91a258b8a9b, type: 3}
+    second: {fileID: 2800000, guid: 3d9beaca13e51bc478742d761c0af490, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: AvatarRightCornea_Color_512
-    second: {fileID: 2800000, guid: a580d40701d03ec449a6d2e3c27d4f77, type: 3}
+    second: {fileID: 2800000, guid: 28a9581fb53bce04cb691f74148f716f, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: AvatarTeeth_Color_1K
-    second: {fileID: 2800000, guid: 99b80962335b95f46aedbce478b1d0da, type: 3}
+    second: {fileID: 2800000, guid: 325fb66ab7648324a9268c1b167a28d6, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: AvatarTeeth_Normal1_1K
-    second: {fileID: 2800000, guid: ce0358e0766e66e4f84239b76a3370b9, type: 3}
+    second: {fileID: 2800000, guid: a9af643ba5605ab46a609cf029769df2, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: AvatarTeeth_Roughness_1K
-    second: {fileID: 2800000, guid: 081d24a80ffc36b448c502eddabab1f1, type: 3}
+    second: {fileID: 2800000, guid: bf110e02e38ccc446b1ec33c1eb88f94, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: KARI_Normal_1K
-    second: {fileID: 2800000, guid: 7bd7e1164a157574e8325775204ac541, type: 3}
+    second: {fileID: 2800000, guid: b2e3867789e9bfa4995577b9a61ff1ff, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: KARI_Roughness_1K
-    second: {fileID: 2800000, guid: 063af9bb32f2786409b68a181593d829, type: 3}
+    second: {fileID: 2800000, guid: 0f0c152041ed87349a9529e65990a3c7, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: shoes_KARI_Color_1K
-    second: {fileID: 2800000, guid: 29e7833d07d12ad4b8e170bc9b7770a8, type: 3}
+    second: {fileID: 2800000, guid: c0c1b0105fad6fa47b3ac9a474d2acdc, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: shorts_Getar_Color_1K
-    second: {fileID: 2800000, guid: 1eafc001654b23a44ae2adcdcb45489d, type: 3}
+    second: {fileID: 2800000, guid: 52132142a76d5ed45978f59873017f3e, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: shorts_Getar_Normal_1K
-    second: {fileID: 2800000, guid: 9a1249e104b327d41b4091fa063e9425, type: 3}
+    second: {fileID: 2800000, guid: 1e349309f27682645a3cc5fc3b3d3742, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: shorts_Getar_Roughness_1K
-    second: {fileID: 2800000, guid: 2ca1d91c02b88ee4da031c475b3b759c, type: 3}
+    second: {fileID: 2800000, guid: 0b4764d7f54a58a49916f08fc4772cb7, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: t-shirt_Hakari_Color_1K
-    second: {fileID: 2800000, guid: 1e846581dc72ea54cb2f88cddd28560b, type: 3}
+    second: {fileID: 2800000, guid: 1a19288f5f014974b9702fb73b05a0ab, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: t-shirt_Hakari_Normal_1K
-    second: {fileID: 2800000, guid: 61f89daeb48f74a49a4a3dc8001b8807, type: 3}
+    second: {fileID: 2800000, guid: 5a74027ae35c4c74c84eba3ed0dd58f4, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: t-shirt_Hakari_Roughness_1K
-    second: {fileID: 2800000, guid: 9a8685d881da51548b481d825be2abbf, type: 3}
+    second: {fileID: 2800000, guid: 067f7fc8d2bc1af40bb7c38b74b34fdd, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
     materialSearch: 1
-    materialLocation: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0

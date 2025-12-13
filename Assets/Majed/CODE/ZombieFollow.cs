@@ -1,50 +1,59 @@
 using UnityEngine;
 
+[RequireComponent(typeof(CharacterController))]
 public class ZombieFollow : MonoBehaviour
 {
-    public Transform player;       // هدف المطاردة (اللاعب)
-    public float moveSpeed = 2f;   // سرعة الزومبي
-    public float stopDistance = 1.5f; // مسافة التوقف
-    public float pushForce = 0.1f; // قوة دفع الزومبي لبعض
+    public Transform player;
+    public float moveSpeed = 2f;
+    public float stopDistance = 1.5f;
+
+    public float gravity = -20f;   // 🔥 الجاذبية
+    private float yVelocity;
+
+    private CharacterController controller;
+
+    void Start()
+    {
+        controller = GetComponent<CharacterController>();
+    }
 
     void Update()
     {
         if (player == null) return;
 
-        // حساب المسافة بين الزومبي واللاعب
-        float distance = Vector3.Distance(transform.position, player.position);
-
-        // إذا اللاعب بعيد → امشِ نحوه
-        if (distance > stopDistance)
+        // ✅ جاذبية
+        if (controller.isGrounded)
         {
-            // الزومبي يلتفت نحو اللاعب
-            Vector3 lookPos = player.position - transform.position;
-            lookPos.y = 0;
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(lookPos), 0.1f);
-
-            // يمشي باتجاه اللاعب
-            transform.position += transform.forward * moveSpeed * Time.deltaTime;
+            yVelocity = -2f; // يثبّت على الأرض
         }
         else
         {
-            // ما يتحرك، لكن ينظر للاعب
-            Vector3 lookPos = player.position - transform.position;
-            lookPos.y = 0;
-            transform.rotation = Quaternion.LookRotation(lookPos);
+            yVelocity += gravity * Time.deltaTime;
         }
-    }
 
-    // 🔥 منع الزومبي من الدخول داخل بعضهم
-    void OnCollisionStay(Collision col)
-    {
-        if (col.gameObject.CompareTag("Zombie"))
+        Vector3 move = Vector3.zero;
+
+        float distance = Vector3.Distance(transform.position, player.position);
+
+        if (distance > stopDistance)
         {
-            // اتجاه الدفع
-            Vector3 pushDir = transform.position - col.transform.position;
-            pushDir.y = 0;
+            Vector3 dir = player.position - transform.position;
+            dir.y = 0;
+            dir.Normalize();
 
-            // دفع بسيط للخارج
-            transform.position += pushDir.normalized * pushForce;
+            // دوران
+            transform.rotation = Quaternion.Slerp(
+                transform.rotation,
+                Quaternion.LookRotation(dir),
+                8f * Time.deltaTime
+            );
+
+            move = dir * moveSpeed;
         }
+
+        // دمج الحركة + الجاذبية
+        move.y = yVelocity;
+
+        controller.Move(move * Time.deltaTime);
     }
 }
