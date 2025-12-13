@@ -28,6 +28,9 @@ public class WeaponController : MonoBehaviour
     [Header("UI")]
     [SerializeField] private CrosshairUI crosshairUI;
 
+    [Header("Player Animation")]
+    [SerializeField] private Animator anim;
+
     private float _nextFireTime = 0f;
     private bool _isReloading = false;
     private float _currentRecoil = 0f;
@@ -57,6 +60,10 @@ public class WeaponController : MonoBehaviour
         {
             Shoot();
         }
+        if (Input.GetButtonUp("Fire1"))
+        {
+            anim.SetBool("Shooting", false);
+        }
     }
 
     private void Shoot()
@@ -73,6 +80,8 @@ public class WeaponController : MonoBehaviour
 
         PlayMuzzleFlash();
         PlayShootSound();
+
+        anim.SetBool("Shooting", true);
 
         if (crosshairUI != null)
             crosshairUI.OnShoot();
