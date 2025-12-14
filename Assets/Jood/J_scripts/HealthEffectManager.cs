@@ -5,9 +5,8 @@ using UnityEngine.SceneManagement;
 public class HealthEffectManager : MonoBehaviour
 {
     [Header("Health Settings")]
-    [SerializeField] private Slider healthSlider; // Connect your health slider here
     [SerializeField] private float maxHealth = 100f;
-    [SerializeField] private string losingSceneName = "LoseScene"; // Name of your losing scene
+    [SerializeField] private string losingSceneName = "losing"; 
 
     [Header("Red Effect Settings")]
     [SerializeField] private Image redOverlay;
@@ -27,26 +26,14 @@ public class HealthEffectManager : MonoBehaviour
             CreateRedOverlay();
         }
 
-        // Initialize health from slider
-        if (healthSlider != null)
-        {
-            currentHealth = healthSlider.value;
-        }
-        else
-        {
+
             currentHealth = maxHealth;
-        }
 
         UpdateRedEffect();
     }
 
     void Update()
     {
-        // Read health from slider
-        if (healthSlider != null)
-        {
-            currentHealth = healthSlider.value;
-        }
 
         // Check if player is dead
         if (currentHealth <= 0f && !isDead)
@@ -72,10 +59,10 @@ public class HealthEffectManager : MonoBehaviour
     {
         if (redOverlay == null) return;
 
-        if (currentHealth < 20f)
+        if (currentHealth < 100f)
         {
             // Calculate intensity based on health (0-20 range)
-            float healthPercent = currentHealth / 20f;
+            float healthPercent = currentHealth / 100f;
             float baseAlpha = (1f - healthPercent) * maxAlpha;
 
             // Add pulsing effect for dramatic feel
@@ -99,24 +86,12 @@ public class HealthEffectManager : MonoBehaviour
     {
         currentHealth = Mathf.Max(0f, currentHealth - damage);
 
-        // Update slider if connected
-        if (healthSlider != null)
-        {
-            healthSlider.value = currentHealth;
-        }
-
         Debug.Log($"Health: {currentHealth}");
     }
 
     public void Heal(float amount)
     {
         currentHealth = Mathf.Min(maxHealth, currentHealth + amount);
-
-        // Update slider if connected
-        if (healthSlider != null)
-        {
-            healthSlider.value = currentHealth;
-        }
 
         Debug.Log($"Health: {currentHealth}");
     }
@@ -125,14 +100,6 @@ public class HealthEffectManager : MonoBehaviour
     {
         // Create a Canvas if none exists
         Canvas canvas = FindObjectOfType<Canvas>();
-        if (canvas == null)
-        {
-            GameObject canvasObj = new GameObject("HealthCanvas");
-            canvas = canvasObj.AddComponent<Canvas>();
-            canvas.renderMode = RenderMode.ScreenSpaceOverlay;
-            canvasObj.AddComponent<CanvasScaler>();
-            canvasObj.AddComponent<GraphicRaycaster>();
-        }
 
         // Create the red overlay image
         GameObject overlayObj = new GameObject("RedOverlay");
@@ -189,6 +156,6 @@ public class HealthEffectManager : MonoBehaviour
     void LoadLosingScene()
     {
         Debug.Log("Player died! Loading losing scene...");
-        SceneManager.LoadScene("losing");
+        SceneManager.LoadScene(losingSceneName);
     }
 }
