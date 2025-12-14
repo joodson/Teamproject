@@ -383,7 +383,7 @@ Transform:
   m_GameObject: {fileID: 188198333}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.3, z: -13.8}
+  m_LocalPosition: {x: 0, y: -1.28, z: -13.8}
   m_LocalScale: {x: 1.8043, y: 1.8043, z: 1.8043}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2479,6 +2479,8 @@ GameObject:
   - component: {fileID: 1518337173}
   - component: {fileID: 1518337172}
   - component: {fileID: 1518337174}
+  - component: {fileID: 1518337176}
+  - component: {fileID: 1518337175}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2526,6 +2528,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6673cdd4cdb190148b28abbe8dafa365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TimerManager
+  gameplaySceneName: SampleScene
+  resetOnGameplayEnter: 1
+--- !u!114 &1518337175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518337171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abba3a0e1b5d5474bbbcbe345944e4a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScoreUI
+  scoreValueText: {fileID: 1388516085}
+--- !u!114 &1518337176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518337171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c85dc3f67f8d6e41a30565d7f6761b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScoreManager
   gameplaySceneName: SampleScene
   resetOnGameplayEnter: 1
 --- !u!1 &1547559344

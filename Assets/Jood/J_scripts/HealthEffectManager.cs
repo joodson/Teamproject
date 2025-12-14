@@ -16,8 +16,6 @@ public class HealthEffectManager : MonoBehaviour
     private float currentHealth;
     private bool isDead = false;
 
-    private bool shouldPulse = false;
-
     void Start()
     {
         // Create red overlay if not assigned
@@ -61,7 +59,7 @@ public class HealthEffectManager : MonoBehaviour
 
         if (currentHealth < 100f)
         {
-            // Calculate intensity based on health (0-20 range)
+            // Calculate intensity based on health
             float healthPercent = currentHealth / 100f;
             float baseAlpha = (1f - healthPercent) * maxAlpha;
 
