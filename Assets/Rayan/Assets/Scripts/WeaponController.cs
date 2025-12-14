@@ -2,9 +2,6 @@ using UnityEngine;
 
 public class WeaponController : MonoBehaviour
 {
-    // 🔒 التحكم بالسلاح (المينيو / اللعب)
-    public static bool CanShoot = false;
-
     [Header("Weapon Stats")]
     [SerializeField] private float damage = 25f;
     [SerializeField] private float fireRate = 0.1f;
@@ -21,101 +18,182 @@ public class WeaponController : MonoBehaviour
     [SerializeField] private float recoilSpeed = 10f;
 
     [Header("References")]
+    [SerializeField] private Transform firePoint;
     [SerializeField] private Camera playerCamera;
     [SerializeField] private ParticleSystem muzzleFlash;
 
     [Header("Audio")]
     [SerializeField] private WeaponAudioManager audioManager;
 
-    private float nextFireTime;
-    private bool isReloading;
-    private float currentRecoil;
+    [Header("UI")]
+    [SerializeField] private CrosshairUI crosshairUI;
 
-    void Update()
+    [Header("Player Animation")]
+    [SerializeField] private Animator anim;
+
+    private float _nextFireTime = 0f;
+    private bool _isReloading = false;
+    private float _currentRecoil = 0f;
+
+    private void Update()
     {
-        // ❌ ممنوع السلاح في المينيو
-        if (!CanShoot)
+        if (_isReloading)
             return;
 
-        if (isReloading)
-            return;
-
-        HandleShoot();
+        HandleShooting();
         HandleReload();
         HandleRecoil();
+        HandleAimCrosshair();
     }
 
-    // ===================== SHOOT =====================
-    void HandleShoot()
+    private void HandleAimCrosshair()
     {
-        if (Input.GetButton("Fire1") && Time.time >= nextFireTime)
+        ThirdPersonCamera cam = playerCamera.GetComponent<ThirdPersonCamera>();
+
+        crosshairUI.SetAiming(cam.IsAiming());
+    }
+
+    private void HandleShooting()
+    {
+        if (Input.GetButton("Fire1") && Time.time >= _nextFireTime)
         {
             Shoot();
         }
+        if (Input.GetButtonUp("Fire1") || currentAmmo == 0)
+        {
+            anim.SetBool("Shooting", false);
+        }
     }
 
-    void Shoot()
+    private void Shoot()
     {
         if (currentAmmo <= 0)
         {
-            audioManager?.PlayEmptySound();
+            PlayEmptySound();
             return;
         }
 
         currentAmmo--;
-        nextFireTime = Time.time + fireRate;
-        currentRecoil += recoilAmount;
+        _nextFireTime = Time.time + fireRate;
+        _currentRecoil += recoilAmount;
 
-        muzzleFlash?.Play();
-        audioManager?.PlayShootSound();
+        PlayMuzzleFlash();
+        PlayShootSound();
 
-        Ray ray = playerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f));
+        anim.SetBool("Shooting", true);
+
+
+        crosshairUI.OnShoot();
+
+        PerformRaycast();
+    }
+
+    private void PerformRaycast()
+    {
+        Ray ray = playerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
         RaycastHit hit;
 
         if (Physics.Raycast(ray, out hit, range))
         {
-            EnemyHealth enemy = hit.collider.GetComponent<EnemyHealth>();
-            if (enemy != null)
-            {
-                enemy.TakeDamage(damage);
-            }
+            HandleBulletImpact(hit);
         }
     }
 
-    // ===================== RELOAD =====================
-    void HandleReload()
+    private void HandleBulletImpact(RaycastHit hit)
+    {
+        if (crosshairUI != null)
+            crosshairUI.ShowHitMarker();
+
+        BulletImpact impactScript = hit.collider.GetComponent<BulletImpact>();
+
+        if (impactScript != null)
+        {
+            impactScript.OnHit(hit.point, hit.normal);
+        }
+    }
+
+
+    private void HandleReload()
     {
         if (Input.GetKeyDown(KeyCode.R) && currentAmmo < maxAmmo && reserveAmmo > 0)
         {
             StartReload();
         }
+
+        if (currentAmmo <= 0 && reserveAmmo > 0 && Input.GetButton("Fire1"))
+        {
+            StartReload();
+        }
     }
 
-    void StartReload()
+    private void StartReload()
     {
-        isReloading = true;
-        audioManager?.PlayReloadSound();
+        if (_isReloading)
+            return;
+
+        _isReloading = true;
+        PlayReloadSound();
+
         Invoke(nameof(FinishReload), reloadTime);
     }
 
-    void FinishReload()
+    private void FinishReload()
     {
-        int need = maxAmmo - currentAmmo;
-        int load = Mathf.Min(need, reserveAmmo);
+        int ammoNeeded = maxAmmo - currentAmmo;
+        int ammoToReload = Mathf.Min(ammoNeeded, reserveAmmo);
 
-        currentAmmo += load;
-        reserveAmmo -= load;
+        currentAmmo += ammoToReload;
+        reserveAmmo -= ammoToReload;
 
-        isReloading = false;
+        _isReloading = false;
     }
 
-    // ===================== RECOIL =====================
-    void HandleRecoil()
+    private void HandleRecoil()
     {
-        if (currentRecoil > 0)
+        if (_currentRecoil > 0)
         {
-            currentRecoil = Mathf.Lerp(currentRecoil, 0, recoilSpeed * Time.deltaTime);
-            playerCamera.transform.localEulerAngles += Vector3.left * currentRecoil * 0.1f;
+            _currentRecoil = Mathf.Lerp(_currentRecoil, 0f, recoilSpeed * Time.deltaTime);
+
+            if (playerCamera != null)
+            {
+                playerCamera.transform.localEulerAngles += new Vector3(-_currentRecoil * 0.1f, 0f, 0f);
+            }
         }
+    }
+
+    private void PlayMuzzleFlash()
+    {
+        if (muzzleFlash != null)
+        {
+            muzzleFlash.Play();
+        }
+    }
+
+    private void PlayShootSound()
+    {
+        if (audioManager != null)
+            audioManager.PlayShootSound();
+    }
+
+    private void PlayReloadSound()
+    {
+        if (audioManager != null)
+            audioManager.PlayReloadSound();
+    }
+
+    private void PlayEmptySound()
+    {
+        if (audioManager != null)
+            audioManager.PlayEmptySound();
+    }
+
+    public int GetCurrentAmmo() => currentAmmo;
+    public int GetMaxAmmo() => maxAmmo;
+    public int GetReserveAmmo() => reserveAmmo;
+    public bool IsReloading() => _isReloading;
+
+    public void AddAmmo(int amount)
+    {
+        reserveAmmo += amount;
     }
 }

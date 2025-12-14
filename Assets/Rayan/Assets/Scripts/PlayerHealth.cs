@@ -14,11 +14,6 @@ public class PlayerHealth : MonoBehaviour
     [Header("Damage Overlay")]
     [SerializeField] private DamageOverlay damageOverlay; // Reference to the blood overlay script
 
-    [Header("Death Settings")]
-    [SerializeField] private bool respawnOnDeath = false;
-    [SerializeField] private float respawnDelay = 3f;
-    [SerializeField] private Transform respawnPoint;
-
     // Private variables
     private float _timeSinceLastDamage = 0f;
     private bool _isDead = false;
@@ -89,10 +84,7 @@ public class PlayerHealth : MonoBehaviour
     }
 
     // ========== PUBLIC METHODS ==========
-
-    /// <summary>
-    /// Call this when the player takes damage (e.g., from a zombie attack)
-    /// </summary>
+    // call when taking damage from zombie
     public void TakeDamage(float damage)
     {
         if (_isDead)
@@ -105,7 +97,7 @@ public class PlayerHealth : MonoBehaviour
         // Reset regeneration timer (stops healing for 3 seconds)
         _timeSinceLastDamage = 0f;
 
-        // Show damage effect (flash the overlay)
+        // Show damage effect
         if (damageOverlay != null)
             damageOverlay.ShowDamageFlash();
 
@@ -114,39 +106,14 @@ public class PlayerHealth : MonoBehaviour
         {
             Die();
         }
-
-        Debug.Log($"Player took {damage} damage. Current health: {currentHealth}");
     }
 
-    /// <summary>
-    /// Heal the player by a specific amount
-    /// </summary>
-    public void Heal(float amount)
-    {
-        if (_isDead)
-            return;
-
-        currentHealth += amount;
-        currentHealth = Mathf.Min(currentHealth, maxHealth);
-
-        Debug.Log($"Player healed {amount}. Current health: {currentHealth}");
-    }
-
-    /// <summary>
-    /// Fully restore player health
-    /// </summary>
-    public void FullHeal()
-    {
-        currentHealth = maxHealth;
-        Debug.Log("Player fully healed!");
-    }
 
     // ========== DEATH AND RESPAWN ==========
 
     private void Die()
     {
         _isDead = true;
-        Debug.Log("Player died!");
 
         // Disable player movement
         PlayerMovement movement = GetComponent<PlayerMovement>();
@@ -161,50 +128,8 @@ public class PlayerHealth : MonoBehaviour
         // Show full red overlay (player is dead)
         if (damageOverlay != null)
             damageOverlay.ShowDeathOverlay();
-
-        // Respawn if enabled
-        if (respawnOnDeath)
-        {
-            Invoke(nameof(Respawn), respawnDelay);
-        }
     }
 
-    private void Respawn()
-    {
-        // Restore health
-        currentHealth = maxHealth;
-        _isDead = false;
-        _timeSinceLastDamage = 0f;
-
-        // Re-enable player controls
-        PlayerMovement movement = GetComponent<PlayerMovement>();
-        if (movement != null)
-            movement.enabled = true;
-
-        WeaponController weapon = GetComponentInChildren<WeaponController>();
-        if (weapon != null)
-            weapon.enabled = true;
-
-        // Move to respawn point
-        if (respawnPoint != null)
-        {
-            CharacterController controller = GetComponent<CharacterController>();
-            if (controller != null)
-            {
-                controller.enabled = false; // Disable before teleporting
-                transform.position = respawnPoint.position;
-                transform.rotation = respawnPoint.rotation;
-                controller.enabled = true; // Re-enable after teleporting
-            }
-            else
-            {
-                transform.position = respawnPoint.position;
-                transform.rotation = respawnPoint.rotation;
-            }
-        }
-
-        Debug.Log("Player respawned!");
-    }
 
     // ========== DAMAGE OVERLAY ==========
 
@@ -226,27 +151,4 @@ public class PlayerHealth : MonoBehaviour
     public float GetMaxHealth() => maxHealth;
     public float GetHealthPercentage() => currentHealth / maxHealth;
     public bool IsDead() => _isDead;
-
-    // ========== SETTERS ==========
-
-    public void SetMaxHealth(float newMaxHealth)
-    {
-        maxHealth = newMaxHealth;
-        currentHealth = Mathf.Min(currentHealth, maxHealth);
-    }
-
-    public void SetRegenRate(float newRate)
-    {
-        regenRate = newRate;
-    }
-
-    public void SetRegenDelay(float newDelay)
-    {
-        regenDelay = newDelay;
-    }
-
-    public void EnableRegeneration(bool enable)
-    {
-        enableRegeneration = enable;
-    }
 }

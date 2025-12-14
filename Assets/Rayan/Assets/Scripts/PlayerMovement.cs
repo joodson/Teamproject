@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
     // Settings for the sounds
     private bool _wasGrounded;
     private float _footstepTimer;
-    //private float _obstacleHitCooldown = 0f;
+    private float _obstacleHitCooldown = 0f;
 
 
     private void Start()
@@ -53,12 +53,10 @@ public class PlayerMovement : MonoBehaviour
     {
         bool groundedThisFrame = Controller.isGrounded;
 
-        /*
         if (_obstacleHitCooldown > 0f)
         {
             _obstacleHitCooldown -= Time.deltaTime;
         }
-        */
 
         ApplyGravity();
         HandleCrouch();
@@ -115,7 +113,7 @@ public class PlayerMovement : MonoBehaviour
     // footsteps 
     private void HandleFootsteps()
     {
-        if (_MoveDirection.magnitude > 0.1f && Controller.isGrounded)
+        if (_MoveDirection.magnitude > 0.1f && Controller.isGrounded  && (_horizontal > 0 || _vertical > 0 ))
         {
             MovementState state = GetCurrentMovementState();
             PlayerSoundManager.Instance.PlayFootstep(state, Time.deltaTime);
@@ -187,10 +185,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        if (_MoveDirection.magnitude > 0.1f)        //if (_MoveDirection.magnitude > 0.1f && _obstacleHitCooldown <= 0f)
+        if (_MoveDirection.magnitude > 0.1f && _obstacleHitCooldown <= 0f)
         {
             PlayerSoundManager.Instance.PlayObstacleSound();
-            //_obstacleHitCooldown = 0.5f; // Can't play again for 0.5 seconds
+            _obstacleHitCooldown = 0.5f; // Can't play again for 0.5 seconds
         }
     }
 
