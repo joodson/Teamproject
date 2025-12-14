@@ -110,7 +110,13 @@ public class WeaponController : MonoBehaviour
         {
             impactScript.OnHit(hit.point, hit.normal);
         }
+         EnemyHealth zombieHealth = hit.collider.GetComponent< EnemyHealth>();
+    if (zombieHealth != null)
+    {
+        zombieHealth.TakeDamage(damage);
     }
+    }
+
 
 
     private void HandleReload()
