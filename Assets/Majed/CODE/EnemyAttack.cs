@@ -44,15 +44,12 @@ public class EnemyAttack : MonoBehaviour
     // This method actually deals the damage
     public void DealDamage()
     {
-        if (PlayerHealth.Instance != null)
-        {
-            // Check if player is still in range
-            float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+        // Check if player is still in range    
+        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
-            if (distanceToPlayer <= attackRange)
-            {
-                PlayerHealth.Instance.TakeDamage(attackDamage);
-            }
+        if (distanceToPlayer <= attackRange)
+        {
+            PlayerHealth.Instance.TakeDamage(attackDamage);
         }
     }
 }
