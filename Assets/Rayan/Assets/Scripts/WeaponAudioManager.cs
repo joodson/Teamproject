@@ -72,6 +72,8 @@ public class WeaponAudioManager : MonoBehaviour
     // ========== RELOAD SOUNDS ==========
     public void PlayReloadSound()
     {
+        reloadAudioSource.volume = reloadVolume;
+
         // Play full reload sound (single long sound)
         PlayRandomClip(reloadAudioSource, reloadSounds, reloadVolume);
     }
@@ -110,6 +112,8 @@ public class WeaponAudioManager : MonoBehaviour
     // ========== EMPTY/DRY FIRE SOUNDS ==========
     public void PlayEmptySound()
     {
+        emptyAudioSource.volume = shootVolume;
+
         PlayRandomClip(emptyAudioSource, emptySounds, shootVolume);
     }
 

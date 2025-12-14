@@ -803,7 +803,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c672f50508e850e49945e29c42a6af71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulletImpact
-  surfaceType: 3
+  surfaceType: 4
   impactEffect: {fileID: 100002, guid: 00fedc70b62a31e448e8ccc298257b56, type: 3}
   effectLifetime: 2
   bulletHoleDecal: {fileID: 100000, guid: 21426148f4a77f04a8244567517fd3a2, type: 3}
