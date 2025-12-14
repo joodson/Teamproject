@@ -63,9 +63,12 @@ public class WeaponAudioManager : MonoBehaviour
     public void PlayShootSound(bool isSuppressed = false)
     {
         AudioClip[] soundsToUse = isSuppressed ? suppressedShootSounds : shootSounds;
+
+        // Also set the AudioSource volume
+        shootAudioSource.volume = shootVolume;
+
         PlayRandomClip(shootAudioSource, soundsToUse, shootVolume);
     }
-
     // ========== RELOAD SOUNDS ==========
     public void PlayReloadSound()
     {

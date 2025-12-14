@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -11,8 +13,14 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private float regenRate = 5f; // Health per second
     [SerializeField] private float regenDelay = 3f; // Seconds before regen starts after taking damage
 
-    [Header("Damage Overlay")]
-    [SerializeField] private DamageOverlay damageOverlay; // Reference to the blood overlay script
+    [Header("Red Overlay Settings")]
+    [SerializeField] private Image redOverlay;
+    [SerializeField] private float maxAlpha = 0.7f; // Maximum opacity when health is 0
+    [SerializeField] private float pulseSpeed = 2f; // Speed of the pulsing effect
+    [SerializeField] private bool createOverlayAutomatically = true;
+
+    [Header("Death Settings")]
+    [SerializeField] private string losingSceneName = "losing";
 
     // Private variables
     private float _timeSinceLastDamage = 0f;
@@ -40,8 +48,14 @@ public class PlayerHealth : MonoBehaviour
         // Start with full health
         currentHealth = maxHealth;
 
+        // Create red overlay if not assigned and auto-creation is enabled
+        if (redOverlay == null && createOverlayAutomatically)
+        {
+            CreateRedOverlay();
+        }
+
         // Update overlay at start (should be invisible)
-        UpdateDamageOverlay();
+        UpdateRedOverlay();
     }
 
     private void Update()
@@ -52,8 +66,18 @@ public class PlayerHealth : MonoBehaviour
         // Handle health regeneration
         HandleRegeneration();
 
-        // Update the blood overlay based on current health
-        UpdateDamageOverlay();
+        // Update the red overlay based on current health
+        UpdateRedOverlay();
+
+        // Test keys (remove in production)
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            TakeDamage(5f);
+        }
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            Heal(5f);
+        }
     }
 
     private void HandleRegeneration()
@@ -84,7 +108,7 @@ public class PlayerHealth : MonoBehaviour
     }
 
     // ========== PUBLIC METHODS ==========
-    // call when taking damage from zombie
+
     public void TakeDamage(float damage)
     {
         if (_isDead)
@@ -94,12 +118,10 @@ public class PlayerHealth : MonoBehaviour
         currentHealth -= damage;
         currentHealth = Mathf.Max(currentHealth, 0f); // Don't go below 0
 
-        // Reset regeneration timer (stops healing for 3 seconds)
+        // Reset regeneration timer (stops healing for regenDelay seconds)
         _timeSinceLastDamage = 0f;
 
-        // Show damage effect
-        if (damageOverlay != null)
-            damageOverlay.ShowDamageFlash();
+        Debug.Log($"Player took {damage} damage. Health: {currentHealth}/{maxHealth}");
 
         // Check if dead
         if (currentHealth <= 0f)
@@ -108,12 +130,120 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    public void Heal(float amount)
+    {
+        if (_isDead)
+            return;
 
-    // ========== DEATH AND RESPAWN ==========
+        currentHealth = Mathf.Min(maxHealth, currentHealth + amount);
+        Debug.Log($"Player healed {amount}. Health: {currentHealth}/{maxHealth}");
+    }
+
+    // ========== RED OVERLAY SYSTEM ==========
+
+    private void UpdateRedOverlay()
+    {
+        if (redOverlay == null)
+            return;
+
+        if (currentHealth < maxHealth)
+        {
+            // Calculate intensity based on health
+            float healthPercent = currentHealth / maxHealth;
+            float baseAlpha = (1f - healthPercent) * maxAlpha;
+
+            // Add pulsing effect for dramatic feel when health is low
+            float pulse = (Mathf.Sin(Time.time * pulseSpeed) + 1f) / 2f;
+            float finalAlpha = baseAlpha + (pulse * 0.2f * (1f - healthPercent));
+
+            Color color = redOverlay.color;
+            color.a = Mathf.Clamp01(finalAlpha);
+            redOverlay.color = color;
+        }
+        else
+        {
+            // Fade out the effect when at full health
+            Color color = redOverlay.color;
+            color.a = Mathf.Lerp(color.a, 0f, Time.deltaTime * 3f);
+            redOverlay.color = color;
+        }
+    }
+
+    private void CreateRedOverlay()
+    {
+        // Find or create a Canvas
+        Canvas canvas = FindObjectOfType<Canvas>();
+        if (canvas == null)
+        {
+            GameObject canvasObj = new GameObject("Canvas");
+            canvas = canvasObj.AddComponent<Canvas>();
+            canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+            canvasObj.AddComponent<CanvasScaler>();
+            canvasObj.AddComponent<GraphicRaycaster>();
+        }
+
+        // Create the red overlay image
+        GameObject overlayObj = new GameObject("RedOverlay");
+        overlayObj.transform.SetParent(canvas.transform, false);
+
+        redOverlay = overlayObj.AddComponent<Image>();
+
+        // Create vignette texture and sprite
+        Texture2D vignetteTexture = CreateVignetteTexture();
+        Sprite vignetteSprite = Sprite.Create(
+            vignetteTexture,
+            new Rect(0, 0, vignetteTexture.width, vignetteTexture.height),
+            new Vector2(0.5f, 0.5f)
+        );
+        redOverlay.sprite = vignetteSprite;
+
+        redOverlay.color = new Color(1f, 0f, 0f, 0f); // Red with 0 alpha initially
+        redOverlay.raycastTarget = false; // Don't block UI interactions
+
+        // Make it cover the entire screen
+        RectTransform rt = overlayObj.GetComponent<RectTransform>();
+        rt.anchorMin = Vector2.zero;
+        rt.anchorMax = Vector2.one;
+        rt.offsetMin = Vector2.zero;
+        rt.offsetMax = Vector2.zero;
+
+        Debug.Log("Red overlay created automatically");
+    }
+
+    private Texture2D CreateVignetteTexture()
+    {
+        int size = 512;
+        Texture2D texture = new Texture2D(size, size);
+
+        Vector2 center = new Vector2(size / 2f, size / 2f);
+        float maxDistance = Vector2.Distance(Vector2.zero, center);
+
+        for (int y = 0; y < size; y++)
+        {
+            for (int x = 0; x < size; x++)
+            {
+                Vector2 pos = new Vector2(x, y);
+                float distance = Vector2.Distance(pos, center);
+
+                // Create vignette effect - darker at edges, transparent in center
+                float normalizedDistance = distance / maxDistance;
+                float alpha = Mathf.Pow(normalizedDistance, 1.5f); // Power for smoother falloff
+
+                texture.SetPixel(x, y, new Color(1f, 1f, 1f, alpha));
+            }
+        }
+
+        texture.Apply();
+        return texture;
+    }
+
+    // ========== DEATH ==========
 
     private void Die()
     {
         _isDead = true;
+
+        Debug.Log("Player died! Loading losing scene...");
 
         // Disable player movement
         PlayerMovement movement = GetComponent<PlayerMovement>();
@@ -126,23 +256,20 @@ public class PlayerHealth : MonoBehaviour
             weapon.enabled = false;
 
         // Show full red overlay (player is dead)
-        if (damageOverlay != null)
-            damageOverlay.ShowDeathOverlay();
+        if (redOverlay != null)
+        {
+            Color color = redOverlay.color;
+            color.a = 1f; // Full opacity
+            redOverlay.color = color;
+        }
+
+        // Load losing scene after a short delay
+        Invoke(nameof(LoadLosingScene), 2f);
     }
 
-
-    // ========== DAMAGE OVERLAY ==========
-
-    private void UpdateDamageOverlay()
+    private void LoadLosingScene()
     {
-        if (damageOverlay != null)
-        {
-            // Calculate how much health is missing (0 = full health, 1 = no health)
-            float damagePercent = 1f - (currentHealth / maxHealth);
-
-            // Update the overlay intensity
-            damageOverlay.SetOverlayIntensity(damagePercent);
-        }
+        SceneManager.LoadScene(losingSceneName);
     }
 
     // ========== GETTERS ==========
