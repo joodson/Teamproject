@@ -4,11 +4,13 @@ using UnityEngine;
 public class WinTimeUI : MonoBehaviour
 {
     public TextMeshProUGUI timeValueText;
+    public TextMeshProUGUI scoreValueText;
 
     void Start()
     {
         float t = TimerManager.Instance.TimeElapsed;
         timeValueText.text = FormatTime(t);
+        scoreValueText.text = ScoreManager.Instance.Score.ToString();
     }
 
     string FormatTime(float t)
