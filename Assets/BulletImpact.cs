@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BulletImpact : MonoBehaviour
 {
-    [Header("Surface Type")]
+    /*[Header("Surface Type")]
     [SerializeField] private SurfaceType surfaceType = SurfaceType.Concrete;
 
     [Header("Impact Effects")]
@@ -82,6 +82,6 @@ public enum SurfaceType
     Ground,
     Flesh,
     Glass,
-    Water
+    Water*/
 }
 
