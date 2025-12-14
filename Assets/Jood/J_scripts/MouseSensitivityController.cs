@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class MouseSensitivityController : MonoBehaviour
 {
     public Slider slider;
-    public settings lookScript; // replace with Rayan script name
+    public ThirdPersonCamera lookScript; // replace with Rayan script name
 
     void Start()
     {

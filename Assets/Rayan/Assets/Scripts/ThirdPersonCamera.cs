@@ -7,7 +7,7 @@ public class ThirdPersonCamera : MonoBehaviour
     [SerializeField] private Vector3 offset = new Vector3(0f, 2f, -5f); // Camera offset from target
 
     [Header("Camera Settings")]
-    [SerializeField] private float mouseSensitivity = 2f;
+    public float mouseSensitivity = 2;
     [SerializeField] private float smoothSpeed = 10f; // How smoothly camera follows
 
     [Header("Rotation Limits")] // Prevents camera from flipping upside down  Basicly useless code
