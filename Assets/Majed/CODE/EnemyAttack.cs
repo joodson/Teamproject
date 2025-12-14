@@ -2,54 +2,40 @@ using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
 {
-    [Header("Attack Settings")]
-    [SerializeField] private float attackDamage = 10f;
-    [SerializeField] private float attackRange = 2f;        // How close to attack
-    [SerializeField] private float attackCooldown = 1f;     // Time between attacks
+    public float damage = 10f;
+    public float attackRange = 1.5f;
+    public float attackRate = 1f;
 
-    [Header("References")]
-    [SerializeField] private Transform player;              // Reference to player
+    private float nextAttackTime;
+    private Transform player;
 
-    // Private variables
-    private float _nextAttackTime = 0f;
-
-    private void Start()
+    void Start()
     {
-        // getting the player object by looking for the tag
-        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
-
-        // having the player transform in the varuable player
-        player = playerObj.transform;
+        // نجيب اللاعب عن طريق الـ Tag
+        player = GameObject.FindGameObjectWithTag("Player")?.transform;
     }
 
-    private void Update()
+    void Update()
     {
-        // Check if player is in attack range
-        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+        if (player == null) return;
 
-        if (distanceToPlayer <= attackRange && Time.time >= _nextAttackTime)
+        float distance = Vector3.Distance(transform.position, player.position);
+
+        if (distance <= attackRange && Time.time >= nextAttackTime)
         {
-            AttackPlayer();
+            Attack();
+            nextAttackTime = Time.time + attackRate;
         }
     }
 
-    private void AttackPlayer()
+    void Attack()
     {
-        _nextAttackTime = Time.time + attackCooldown;
+        // ننادي PlayerHealth
+        PlayerHealth health = player.GetComponent<PlayerHealth>();
 
-        // Deal damage to player
-        DealDamage();
-    }
-
-    // This method actually deals the damage
-    public void DealDamage()
-    {
-        // Check if player is still in range    
-        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
-
-        if (distanceToPlayer <= attackRange)
+        if (health != null && !health.IsDead())
         {
-            PlayerHealth.Instance.TakeDamage(attackDamage);
+            health.TakeDamage(damage);
         }
     }
 }

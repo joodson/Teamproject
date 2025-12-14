@@ -2,22 +2,28 @@ using UnityEngine;
 
 public class ZombieSpawner : MonoBehaviour
 {
-    public Transform player;             // اللاعب
-    public int maxZombies = 20;          // الحد الأعلى للزومبي
-    public float spawnRate = 2f;         // كل كم ثانية يرسبن واحد جديد
-    public float spawnRadius = 10f;      // مسافة ظهور الزومبي حول اللاعب
+    [Header("References")]
+    public Transform player;          // اللاعب
+    public GameObject zombiePrefab;   // Prefab الزومبي
 
-    private float nextSpawnTime = 0f;
-    private GameObject zombieTemplate;   // النسخة الأساسية اللي بنستنسخ منها
+    [Header("Spawn Settings")]
+    public int maxZombies = 20;
+    public float spawnRate = 2f;
+    public float spawnRadius = 5f;
+    public float activationDistance = 15f; // اللاعب لازم يكون قريب
 
-    void Start()
-    {
-        // نحفظ نسخة من نفس الكائن كـ Template
-        zombieTemplate = gameObject;
-    }
+    private float nextSpawnTime;
 
     void Update()
     {
+        if (player == null || zombiePrefab == null)
+            return;
+
+        // إذا اللاعب بعيد → لا تسباون
+        float distance = Vector3.Distance(player.position, transform.position);
+        if (distance > activationDistance)
+            return;
+
         if (Time.time >= nextSpawnTime)
         {
             TrySpawnZombie();
@@ -27,24 +33,29 @@ public class ZombieSpawner : MonoBehaviour
 
     void TrySpawnZombie()
     {
-        // نحسب عدد الزومبي المتواجدين
         int currentZombies = GameObject.FindGameObjectsWithTag("Zombie").Length;
-
         if (currentZombies >= maxZombies)
             return;
 
-        // تحديد موقع عشوائي حول اللاعب
-        Vector3 spawnPos = player.position + Random.insideUnitSphere * spawnRadius;
-        spawnPos.y = player.position.y;
+        // مكان عشوائي حول نقطة السباون
+        Vector3 spawnPos = transform.position + Random.insideUnitSphere * spawnRadius;
+        spawnPos.y = transform.position.y;
 
-        // استنساخ الزومبي من نفس الكائن اللي المركب عليه السكربت
-        GameObject newZombie = Instantiate(zombieTemplate, spawnPos, zombieTemplate.transform.rotation);
+        GameObject zombie = Instantiate(zombiePrefab, spawnPos, Quaternion.identity);
 
-        // نحرص ألا نعبث بالـ spawner نفسه
-        newZombie.GetComponent<ZombieSpawner>().enabled = false;
+        // ربط اللاعب للزومبي
+        ZombieFollow follow = zombie.GetComponent<ZombieFollow>();
+        if (follow != null)
+            follow.player = player;
+    }
 
-        // ربط اللاعب داخل سكربت متابعة الزومبي
-        ZombieFollow follow = newZombie.GetComponent<ZombieFollow>();
-        follow.player = player;
+    // عشان تشوف الرينج في Scene
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, activationDistance);
+
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, spawnRadius);
     }
 }

@@ -106,6 +106,16 @@ PrefabInstance:
     - target: {fileID: 5866666021909216657, guid: 89a0bb1d4db4f6d44a03979c792d671f,
         type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 89a0bb1d4db4f6d44a03979c792d671f,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 9a6000fe9cacf6b4cb82f93fc07e7b25, type: 2}
+    - target: {fileID: 5866666021909216657, guid: 89a0bb1d4db4f6d44a03979c792d671f,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -116,10 +126,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 8941594167916331642}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 89a0bb1d4db4f6d44a03979c792d671f,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3212423564719085125}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 89a0bb1d4db4f6d44a03979c792d671f,
         type: 3}
       insertIndex: -1
@@ -151,26 +157,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb6a5ba78e44d764bb3275ccabbcd55e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZombieFollow
-  player: {fileID: 0}
-  moveSpeed: 2
+  player: {fileID: 1443430576008544038, guid: 1fe629f18bfc0d94cad1f3a50c07ba1c, type: 3}
+  moveSpeed: 1
   stopDistance: 1.5
   gravity: -30
---- !u!114 &3212423564719085125
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1550643953158210863}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f84b57de898bfb04aabe62a9d1fb301e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ZombieSpawner
-  player: {fileID: 2220044651592294293}
-  maxZombies: 100
-  spawnRate: 2
-  spawnRadius: 10
 --- !u!114 &618515290667967323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,7 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 633f6962e4d8bea4d8c632bc00143959, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
-  health: 100
+  health: 50
 --- !u!143 &3955853182044567013
 CharacterController:
   m_ObjectHideFlags: 0
@@ -227,9 +217,3 @@ MonoBehaviour:
   effectLifetime: 2
   bulletHoleDecal: {fileID: 0}
   spawnBulletHole: 1
---- !u!4 &2220044651592294293 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 89a0bb1d4db4f6d44a03979c792d671f,
-    type: 3}
-  m_PrefabInstance: {fileID: 1821028356399265918}
-  m_PrefabAsset: {fileID: 0}
