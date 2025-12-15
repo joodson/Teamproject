@@ -28,9 +28,9 @@ public class WeaponAudioManager : MonoBehaviour
     [SerializeField] private AudioClip[] fleshImpactSounds;     // Zombie hits (blood splatter)
 
     [Header("Audio Settings")]
-    [SerializeField] private float shootVolume = 1f;
+    [SerializeField] private float shootVolume = 0.2f;
     [SerializeField] private float reloadVolume = 0.8f;
-    [SerializeField] private float impactVolume = 0.6f;
+    [SerializeField] private float impactVolume = 0.8f;
 
     // Singleton pattern (same as PlayerSoundManager)
     public static WeaponAudioManager Instance;
