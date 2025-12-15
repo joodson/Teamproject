@@ -4547,13 +4547,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1326949714}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 44652d0ff4e251144b080d6f0ce01dda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FinalBossHealth
   enemyHealth: {fileID: 1326949717}
-  winSceneName: winning
+  winningSceneName: winning
 --- !u!1 &1328571395 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1550643953158210863, guid: 3d505a100c7d8614d99019def6497ca5,

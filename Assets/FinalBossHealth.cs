@@ -4,7 +4,8 @@ using UnityEngine.SceneManagement;
 public class FinalBossHealth : MonoBehaviour
 {
     public EnemyHealth enemyHealth;   // نسحب EnemyHealth هنا
-    public string winSceneName = "winning";
+    
+    [SerializeField] private string winningSceneName = "winning";
 
     public void TakeDamage(float amount)
     {
@@ -12,7 +13,14 @@ public class FinalBossHealth : MonoBehaviour
 
         if (enemyHealth.health <= 0)
         {
-            SceneManager.LoadScene("winning");
+             Invoke(nameof(LoadLosingScene), 2f);
+             
         }
     }
+    
+     private void LoadLosingScene()
+        
+    {
+        SceneManager.LoadScene(winningSceneName);
+    }   
 }
