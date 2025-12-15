@@ -2,16 +2,15 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
-    public Transform player;           
-    public float moveSpeed = 2.5f;     
-    public float chaseRange = 10f;     
-    public float attackRange = 1.5f;   
-    public float attackCooldown = 1.2f;
+    public Transform player;
+    public float moveSpeed = 3f;
+    public float attackDistance = 2f;
+    public int damage = 10;
 
-    private float nextAttackTime = 0f; 
     private Animator anim;
-   
-
+    private bool isDead = false;
+    private float attackCooldown = 1.5f;
+    private float timer = 0;
 
     void Start()
     {
@@ -20,46 +19,38 @@ public class EnemyAI : MonoBehaviour
 
     void Update()
     {
-        if (player == null) return;
+        if (isDead || player == null) return;
 
         float distance = Vector3.Distance(transform.position, player.position);
 
-        // 1) اللاعب بعيد = العدو يقف
-        if (distance > chaseRange)
-        {
-            anim.SetBool("isMoving", false);
-            return;
-        }
-
-        // 2) اللاعب داخل نطاق التحرك = العدو يمشي باتجاه اللاعب
-        if (distance > attackRange)
+        if (distance > attackDistance)
         {
             anim.SetBool("isMoving", true);
             transform.LookAt(player);
             transform.position += transform.forward * moveSpeed * Time.deltaTime;
-            return;
         }
-
-        // 3) اللاعب قريب جدًا = العدو يهاجم
-        anim.SetBool("isMoving", false);
-
-        if (Time.time >= nextAttackTime)
+        else
         {
-            anim.SetTrigger("Attack");
-            player.GetComponent<playerMovemnt>().TakeDamage(1);
+            anim.SetBool("isMoving", false);
 
-            nextAttackTime = Time.time + attackCooldown;
+            timer += Time.deltaTime;
+            if (timer >= attackCooldown)
+            {
+                anim.SetTrigger("Attack");
+
+                PlayerHealth health = player.GetComponent<PlayerHealth>();
+                if (health != null)
+                    health.TakeDamage(damage);
+
+                timer = 0;
+            }
         }
     }
+
     public void Die()
-{
-    // شغل أنيميشن الموت
-    anim.SetTrigger("Death");
-
-    // أوقف الحركة والهجوم
-    this.enabled = false;
-
-    // حذف العدو بعد ثانية (اختياري)
-    Destroy(gameObject, 2f);
-}
+    {
+        isDead = true;
+        anim.SetBool("isDead", true);
+        Destroy(gameObject, 2f);
+    }
 }

@@ -7734,9 +7734,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZombieSpawner
   player: {fileID: 60112244}
+  zombiePrefab: {fileID: 0}
   maxZombies: 100
   spawnRate: 2
   spawnRadius: 10
+  activationDistance: 15
+  zombieLifeTime: 30
 --- !u!114 &60112242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19772,10 +19775,13 @@ MonoBehaviour:
   reloadTime: 2
   recoilAmount: 2
   recoilSpeed: 10
+  firePoint: {fileID: 0}
   playerCamera: {fileID: 460718882}
   muzzleFlash: {fileID: 198792769130808804, guid: 4543ab5e3d405ec40a8d4e9aa5165030,
     type: 3}
   audioManager: {fileID: 1435769300}
+  crosshairUI: {fileID: 0}
+  anim: {fileID: 0}
 --- !u!1001 &151321783
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -94975,83 +94981,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 706017944}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &708198870 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7da4eae7c2fddd940a90cd325c54f099,
-    type: 3}
-  m_PrefabInstance: {fileID: 1040548860}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &708198873
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 708198870}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcc82de7b157d7d428956308935e79b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SonicController
-  speed: 5
-  rotationSpeed: 10
-  attackDamage: 30
-  attackRange: 1.2
-  attackDelay: 0.2
---- !u!114 &708198875
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 708198870}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 633f6962e4d8bea4d8c632bc00143959, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
-  health: 250
---- !u!114 &708198879
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 708198870}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb6a5ba78e44d764bb3275ccabbcd55e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ZombieFollow
-  player: {fileID: 115752405}
-  moveSpeed: 2
-  stopDistance: 1.5
-  gravity: -20
---- !u!143 &708198880
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 708198870}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Height: 4
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1001 &708499091
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -99769,9 +99698,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZombieSpawner
   player: {fileID: 749448619}
+  zombiePrefab: {fileID: 0}
   maxZombies: 100
   spawnRate: 2
   spawnRadius: 10
+  activationDistance: 15
+  zombieLifeTime: 30
 --- !u!114 &749448624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123931,9 +123863,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZombieSpawner
   player: {fileID: 912392294}
+  zombiePrefab: {fileID: 0}
   maxZombies: 100
   spawnRate: 2
   spawnRadius: 10
+  activationDistance: 15
+  zombieLifeTime: 30
 --- !u!114 &912392292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141791,115 +141726,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1040465050}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1040548860
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 7da4eae7c2fddd940a90cd325c54f099,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 7da4eae7c2fddd940a90cd325c54f099,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 7da4eae7c2fddd940a90cd325c54f099,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 7da4eae7c2fddd940a90cd325c54f099,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -288.7
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 7da4eae7c2fddd940a90cd325c54f099,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.96
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 7da4eae7c2fddd940a90cd325c54f099,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 134.32
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 7da4eae7c2fddd940a90cd325c54f099,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 7da4eae7c2fddd940a90cd325c54f099,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 7da4eae7c2fddd940a90cd325c54f099,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 7da4eae7c2fddd940a90cd325c54f099,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 7da4eae7c2fddd940a90cd325c54f099,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 7da4eae7c2fddd940a90cd325c54f099,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 7da4eae7c2fddd940a90cd325c54f099,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 7da4eae7c2fddd940a90cd325c54f099,
-        type: 3}
-      propertyPath: m_Name
-      value: kolossos_com_riggle
-      objectReference: {fileID: 0}
-    - target: {fileID: 3646144633081273320, guid: 7da4eae7c2fddd940a90cd325c54f099,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -3.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5866666021909216657, guid: 7da4eae7c2fddd940a90cd325c54f099,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: f1bdc8cbbbd09484f86c21311b176a1c, type: 2}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7da4eae7c2fddd940a90cd325c54f099,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 708198873}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7da4eae7c2fddd940a90cd325c54f099,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 708198875}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7da4eae7c2fddd940a90cd325c54f099,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 708198880}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7da4eae7c2fddd940a90cd325c54f099,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 708198879}
-  m_SourcePrefab: {fileID: 100100000, guid: 7da4eae7c2fddd940a90cd325c54f099, type: 3}
 --- !u!1001 &1041425836
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -290863,9 +290689,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZombieSpawner
   player: {fileID: 2118270986}
+  zombiePrefab: {fileID: 0}
   maxZombies: 100
   spawnRate: 2
   spawnRadius: 10
+  activationDistance: 15
+  zombieLifeTime: 30
 --- !u!114 &2118270984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293746,6 +293575,79 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2146807220}
   m_Mesh: {fileID: 4300000, guid: 8fb3d1c2ac3340f468df743c47190f44, type: 3}
+--- !u!1001 &732710133226828373
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2631240293006951619, guid: 0564c5df184f4074b98908b213ca1264,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -288.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2631240293006951619, guid: 0564c5df184f4074b98908b213ca1264,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 2631240293006951619, guid: 0564c5df184f4074b98908b213ca1264,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 134.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 2631240293006951619, guid: 0564c5df184f4074b98908b213ca1264,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2631240293006951619, guid: 0564c5df184f4074b98908b213ca1264,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2631240293006951619, guid: 0564c5df184f4074b98908b213ca1264,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2631240293006951619, guid: 0564c5df184f4074b98908b213ca1264,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2631240293006951619, guid: 0564c5df184f4074b98908b213ca1264,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2631240293006951619, guid: 0564c5df184f4074b98908b213ca1264,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2631240293006951619, guid: 0564c5df184f4074b98908b213ca1264,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3445213821636943481, guid: 0564c5df184f4074b98908b213ca1264,
+        type: 3}
+      propertyPath: m_Name
+      value: kolossos_com_riggle
+      objectReference: {fileID: 0}
+    - target: {fileID: 4645333381849096249, guid: 0564c5df184f4074b98908b213ca1264,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 115752405}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0564c5df184f4074b98908b213ca1264, type: 3}
 --- !u!1001 &7186803532570956331
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -295141,5 +295043,5 @@ SceneRoots:
   - {fileID: 2032432533}
   - {fileID: 145684180}
   - {fileID: 7186803532570956331}
-  - {fileID: 1040548860}
+  - {fileID: 732710133226828373}
   - {fileID: 976486445}
