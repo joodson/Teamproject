@@ -16,9 +16,10 @@ public class EnemyHealth : MonoBehaviour
             finalbossdefeated = true;
             if (health <= 0)
         {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
             Die();
             SceneManager.LoadScene(winningSceneName);
-
         }
         }
 

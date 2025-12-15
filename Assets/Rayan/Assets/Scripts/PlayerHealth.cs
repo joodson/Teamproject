@@ -259,6 +259,8 @@ public class PlayerHealth : MonoBehaviour
 
     private void LoadLosingScene()
     {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         SceneManager.LoadScene(losingSceneName);
     }
 
