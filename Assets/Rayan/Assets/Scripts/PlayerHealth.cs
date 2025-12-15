@@ -68,16 +68,6 @@ public class PlayerHealth : MonoBehaviour
 
         // Update the red overlay based on current health
         UpdateRedOverlay();
-
-        // Test keys (remove in production)
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            TakeDamage(5f);
-        }
-        if (Input.GetKeyDown(KeyCode.J))
-        {
-            Heal(5f);
-        }
     }
 
     private void HandleRegeneration()

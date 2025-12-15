@@ -16,13 +16,6 @@ public class ScoreManager : MonoBehaviour
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            AddScore(10);
-        }
-    }
     void OnDestroy()
     {
         if (Instance == this)
