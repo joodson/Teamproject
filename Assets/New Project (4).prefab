@@ -138,6 +138,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: -6692308653818509791}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 89a0bb1d4db4f6d44a03979c792d671f,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2001079747711324543}
   m_SourcePrefab: {fileID: 100100000, guid: 89a0bb1d4db4f6d44a03979c792d671f, type: 3}
 --- !u!1 &1550643953158210863 stripped
 GameObject:
@@ -217,3 +221,18 @@ MonoBehaviour:
   effectLifetime: 2
   bulletHoleDecal: {fileID: 0}
   spawnBulletHole: 1
+--- !u!114 &2001079747711324543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1550643953158210863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cef3134cf82c75d4fa918089a8edd775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyAttack
+  damage: 10
+  attackRange: 1.5
+  attackRate: 1

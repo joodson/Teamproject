@@ -451,6 +451,7 @@ MonoBehaviour:
   spawnRate: 1
   spawnRadius: 1
   activationDistance: 25
+  zombieLifeTime: 30
 --- !u!65 &59200272
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1678,6 +1679,7 @@ MonoBehaviour:
   spawnRate: 1
   spawnRadius: 1
   activationDistance: 25
+  zombieLifeTime: 30
 --- !u!65 &576436071
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2521,6 +2523,7 @@ MonoBehaviour:
   spawnRate: 1
   spawnRadius: 1
   activationDistance: 100
+  zombieLifeTime: 30
 --- !u!65 &1000484783
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2877,6 +2880,7 @@ MonoBehaviour:
   spawnRate: 1
   spawnRadius: 1
   activationDistance: 30
+  zombieLifeTime: 30
 --- !u!65 &1165921427
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3071,6 +3075,7 @@ MonoBehaviour:
   spawnRate: 1
   spawnRadius: 1
   activationDistance: 40
+  zombieLifeTime: 30
 --- !u!65 &1257523051
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3625,10 +3630,11 @@ MonoBehaviour:
   player: {fileID: 655689298}
   zombiePrefab: {fileID: 1550643953158210863, guid: 7289dfc242505e34693aec859c0e6016,
     type: 3}
-  maxZombies: 4
+  maxZombies: 5
   spawnRate: 1
   spawnRadius: 1
   activationDistance: 25
+  zombieLifeTime: 30
 --- !u!65 &1469646072
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4077,6 +4083,7 @@ MonoBehaviour:
   spawnRate: 1
   spawnRadius: 1
   activationDistance: 40
+  zombieLifeTime: 30
 --- !u!65 &1619119832
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -43037,6 +43044,7 @@ MonoBehaviour:
   spawnRate: 1
   spawnRadius: 1
   activationDistance: 25
+  zombieLifeTime: 30
 --- !u!65 &1787430641
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -43168,6 +43176,7 @@ MonoBehaviour:
   spawnRate: 1
   spawnRadius: 1
   activationDistance: 25
+  zombieLifeTime: 30
 --- !u!65 &1797297673
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -43299,6 +43308,7 @@ MonoBehaviour:
   spawnRate: 1
   spawnRadius: 1
   activationDistance: 25
+  zombieLifeTime: 30
 --- !u!65 &1830732497
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -44099,6 +44109,7 @@ MonoBehaviour:
   spawnRate: 1
   spawnRadius: 1
   activationDistance: 40
+  zombieLifeTime: 30
 --- !u!65 &2078232210
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -44230,6 +44241,7 @@ MonoBehaviour:
   spawnRate: 1
   spawnRadius: 1
   activationDistance: 40
+  zombieLifeTime: 30
 --- !u!65 &2142156273
 BoxCollider:
   m_ObjectHideFlags: 0

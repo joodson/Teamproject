@@ -12,6 +12,9 @@ public class ZombieSpawner : MonoBehaviour
     public float spawnRadius = 5f;
     public float activationDistance = 15f; // اللاعب لازم يكون قريب
 
+    [Header("Zombie Life")]
+    public float zombieLifeTime = 30f; // ⏱️ مدة بقاء الزومبي
+
     private float nextSpawnTime;
 
     void Update()
@@ -47,6 +50,9 @@ public class ZombieSpawner : MonoBehaviour
         ZombieFollow follow = zombie.GetComponent<ZombieFollow>();
         if (follow != null)
             follow.player = player;
+
+        // ⏱️ تدمير الزومبي بعد مدة
+        Destroy(zombie, zombieLifeTime);
     }
 
     // عشان تشوف الرينج في Scene
