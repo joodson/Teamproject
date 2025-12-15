@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class WeaponController : MonoBehaviour
@@ -12,6 +13,7 @@ public class WeaponController : MonoBehaviour
     [SerializeField] private int currentAmmo = 30;
     [SerializeField] private int reserveAmmo = 90;
     [SerializeField] private float reloadTime = 2f;
+    public TextMeshProUGUI currentAmmoDisplay;
 
     [Header("Recoil")]
     [SerializeField] private float recoilAmount = 2f;
@@ -44,6 +46,8 @@ public class WeaponController : MonoBehaviour
         HandleReload();
         HandleRecoil();
         HandleAimCrosshair();
+
+        currentAmmoDisplay.text = currentAmmo.ToString();
     }
 
     private void HandleAimCrosshair()
